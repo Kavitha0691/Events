@@ -77,3 +77,20 @@ const findContent = classToMatch => {
 animalTabs.forEach(tab => tab.addEventListener("mouseenter", () => {
        findContent(tab.textContent.toLowerCase())
 }))
+
+//excersice 10
+
+const searchInput = document.querySelector("#search")
+// document.addEventListener("input", () => console.log(searchInput.value))
+
+const findTab = () => {
+     animalTabs.forEach(tab => {
+       if (tab.textContent.toLowerCase().includes(searchInput.value)) {
+              tab.classList.add(`active`)
+       }else {
+             tab.classList.remove(`active`)
+       }
+     })
+}
+
+searchInput.addEventListener("input", findTab)
